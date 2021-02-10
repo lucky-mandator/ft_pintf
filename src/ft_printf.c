@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:45:54 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/10 14:22:10 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/10 14:41:38 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_dump_buff(t_printf *tab)
 	tab->buff_count = 0;
 }
 
-void	ft_printf_norm(t_printf *tab,char *format)
+void	ft_print_normal(t_printf *tab, char *format)
 {
 	int	len;
 
@@ -36,7 +36,7 @@ void	ft_printf_norm(t_printf *tab,char *format)
 	tab->i--;
 }
 
-void	ft_init_struct(t_printf *tab)
+void	ft_init_strct(t_printf *tab)
 {
 	tab->buff_count = 0;
 	tab->i = 0;
@@ -54,20 +54,22 @@ int ft_printf(const char *format, ...)
 	{
 		if(format[tab.i] == '%')
 		{
+			printf("flag");
 			if (format[tab.i + 1] == '\0')
 				break;
 			//if (ft_is_pf(format[tab.i + 1]))
 			//	ft_prase((char*)format, ap, &tab);
 		}
 		else
-			ft_print_norm(&tab, (char*)format);
+			ft_print_normal(&tab, (char*)format);
 		tab.i++;
 	}
+	printf("loop end");
 	va_end(ap);
 	return (tab.ret);
 }
 
 int main(void)
 {
-	ft_printf("sai chaitanya");
+	ft_printf("sai chaitanya%d", 42);
 }

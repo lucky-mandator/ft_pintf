@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 13:17:17 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/10 14:24:05 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/10 14:35:53 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct	s_printf
 	int		ret;
 }		t_printf;
 int				ft_printf(const char *str, ...);
-void	ft_init_struct(t_printf *tab);
-void	ft_printf_norm(t_printf *tab,char *format);
+void	ft_init_strct(t_printf *tab);
+void	ft_print_normal(t_printf *tab, char *format);
 void	ft_dump_buff(t_printf *tab);
 
 
