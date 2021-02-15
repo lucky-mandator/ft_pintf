@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 11:40:39 by saluru            #+#    #+#             */
-/*   Updated: 2021/01/25 11:28:05 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/15 20:01:20 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			**ft_split(char const *s, char c);
+char			*ft_itoa_base(uintmax_t n, char *base);
+int				ft_check_base(char *base);
+int				ft_is_in_stri(char c, char *str);
+size_t			ft_is_space(char c);
+size_t			ft_intlen_base(uintmax_t n, char *base);
 typedef struct	s_list
 {
 	void			*content;

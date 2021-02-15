@@ -1,38 +1,49 @@
-CC = gcc
-RM = /bin/rm -f
+NAME			= libftprintf.a
 
-SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
-					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
-					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
-					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_memccpy.c \
-					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
-					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c
+SRCS_LIST		= 	ft_printf.c \
+					ft_phrase.c \
+					ft_convert.c \
+					ft_convert2.c \
+					ft_extra_funs.c \
+					ft_extra_funs2.c \
+					ft_extra_funs3.c \
+					ft_extra_funs4.c \
+					ft_checks.c \
 
-SRCS_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		 ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-OBJS = ${SRCS:.c=.o}
-OBJS_B = ${SRCS_B:.c=.o}
+SRCS			= $(addprefix ${FOLDER}/, ${SRCS_LIST})
 
-%o: %.c
-	${CC} ${CFLAGS} $<
+OBJS			= ${SRCS:.c=.o}
 
-all: $(NAME)
+HEADER			= includes
+FOLDER			= src
 
-$(NAME): ${OBJS}
-	ar -rc ${NAME} ${OBJS}
-	ranlib ${NAME}
+LIBFT 			= libft
 
-bonus: $(NAME) $(OBJS_B)
-	ar -rc $(NAME) $(OBJS_B)
+CC				= gcc
+CFLAGS 			= -Wall -Wextra -Werror
+RM				= rm -f
+
+all:			${NAME}
+
+$(NAME):		${OBJS}
+				@make -C $(LIBFT)
+				@cp libft/libft.a ./$(NAME)
+				@ar -rcs ${NAME} ${OBJS}
+
+bonus:			${NAME}
+
+%.o: %.c
+				@${CC} ${CFLAGS} -I ${HEADER} -o $@ -c $<
 
 clean:
-	${RM} ${OBJS} ${OBJS_B}
+				@${RM} ${OBJS}
+				@make clean -C $(LIBFT)
 
-fclean: clean
-	${RM} ${NAME} $(bonus)
+fclean:			clean
+				@${RM} ${NAME}
+				@make fclean -C $(LIBFT)
 
-re: fclean all
+re:				fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: 		all fclean clean re

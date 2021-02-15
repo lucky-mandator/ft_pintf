@@ -6,16 +6,32 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:45:54 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/13 19:45:51 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/15 18:57:18 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_dump_buff(t_printf *tab)
 {
 	write(1, tab->buff, tab->buff_count);
 	tab->buff_count = 0;
+}
+
+void	ft_add_to_buff(t_printf *tab, char *str, int len)
+{
+	int		i;
+
+	i = 0;
+	tab->ret += len;
+	while (i < len)
+	{
+		tab->buff[tab->buff_count] = str[i];
+		tab->buff_count++;
+		if (tab->buff_count == BUFFER_SIZE)
+			ft_dump_buff(tab);
+		i++;
+	}
 }
 
 void	ft_print_normal(t_printf *tab, char *format)
@@ -49,6 +65,8 @@ void	ft_init_strct(t_printf *tab)
 	tab->width = 0;
 	tab->dot = 0;
 	tab->dot_len = 0;
+	tab->u = 0;
+	tab->n = 0;
 }
 
 int ft_printf(const char *format, ...)
@@ -79,5 +97,5 @@ int ft_printf(const char *format, ...)
 
 int main(void)
 {
-	ft_printf("sai chaitanya%d", 42);
+	ft_printf("sai chaitanya%csai", 'D');
 }

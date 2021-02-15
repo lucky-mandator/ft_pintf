@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checks.c                                        :+:      :+:    :+:   */
+/*   ft_extra_funs4.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 12:55:17 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 18:51:47 by saluru           ###   ########.fr       */
+/*   Created: 2021/02/15 18:38:24 by saluru            #+#    #+#             */
+/*   Updated: 2021/02/15 18:51:24 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_check_sp(char c)
+char	*ft_uitoa(uintmax_t n)
 {
-	return (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u' 
-			|| c == 'x' || c == 'X' || c == '%' || c == 'n');
-}
+	char		*str;
+	int			num_len;
 
-size_t ft_check_pf(char c)
-{
-	return (ft_check_sp(c) || c == '+' || c == '-' || c == '.' || c  == '#' || c == ' ' 
-			|| (c >= '0' && c <= '9'));
-}
-
-size_t	ft_check_flags(char c)
-{
-	return (c == '+' || c == ' ' || c == '-' || c == '#' || c == '0');
+	num_len = ft_uintlen(n);
+	if (!(str = ft_calloc((num_len + 1), sizeof(char))))
+		return (NULL);
+	str[num_len] = '\0';
+	while (num_len)
+	{
+		str[--num_len] = n % 10 + 48;
+		n = n / 10;
+	}
+	return (str);
 }
