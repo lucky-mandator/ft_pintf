@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 17:00:23 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 19:34:17 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/16 14:43:47 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,20 +109,5 @@ intmax_t	ft_atoi_base(char *str, char *base)
 		str++;
 	}
 	return (negative ? -atoi : atoi);
-}
-
-size_t	ft_intlen_base(uintmax_t n, char *base)
-{
-	size_t		len;
-	uintmax_t	base_len;
-
-	len = 1;
-	base_len = ft_strlen(base);
-	while (n >= base_len)
-	{
-		n = n / base_len;
-		len++;
-	}
-	return (len);
 }
 

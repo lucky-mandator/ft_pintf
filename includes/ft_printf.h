@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 18:56:13 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 20:00:29 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/18 13:46:40 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct	s_printf
 	int		dot;
 	int		dot_parsing;
 	int		dot_len;
-	char	convert;
+	int		convert;
 	int		len;
 	int		sp_len;
 	int		is_int;
@@ -65,7 +65,8 @@ void	ft_prase(char *format, va_list ap, t_printf *tab);
 void	ft_save_flags(char *format, va_list ap, t_printf *tab);
 void	ft_save_action(char *format, t_printf *tab);
 void	ft_save_rest(char *format, va_list ap, t_printf *tab);
-int		ft_save_num(char *format, t_printf *tab);
+void	ft_save_num(char *format, va_list ap, t_printf *tab);
+void	ft_check_star(va_list, t_printf *tab);
 
 char	*ft_print_sp(t_printf *tab);
 char	*ft_num_precision(char *str, t_printf *tab);
@@ -87,8 +88,6 @@ void	ft_con_u(va_list ap, t_printf *tab);
 void	ft_con_x(va_list ap, t_printf *tab);
 void	ft_add_prefix(t_printf *tab);
 
-void	ft_con_X(va_list ap, t_printf *tab);
-
 void	ft_con_n(va_list ap, t_printf *tab);
 
 void	ft_reset_flags(t_printf *tab);
@@ -101,6 +100,9 @@ size_t	ft_intlen_base(uintmax_t n, char *base);
 intmax_t	ft_atoi_base(char *str, char *base);
 size_t	ft_uintlen(uintmax_t n);
 void	ft_size_u(va_list ap, t_printf *tab);
+void	ft_convert_uint(va_list ap, t_printf *tab);
+void	ft_size_int(va_list ap, t_printf *tab);
+
 
 
 /*

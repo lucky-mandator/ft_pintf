@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 15:43:43 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 19:47:51 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/18 11:46:07 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_con_str(va_list ap, t_printf *tab)
 	ft_join_all(str, sp, tab);
 }
 
-void	ft_convert_n(va_list ap, t_printf *tab)
+void	ft_con_n(va_list ap, t_printf *tab)
 {
 	intmax_t	*n;
 
@@ -60,7 +60,7 @@ void	ft_convert_n(va_list ap, t_printf *tab)
 	*n = tab->ret;
 }
 
-void	ft_convert_x(va_list ap, t_printf *tab)
+void	ft_con_x(va_list ap, t_printf *tab)
 {
 	char	*str;
 	char	*sp;
@@ -89,7 +89,7 @@ void	ft_convert_x(va_list ap, t_printf *tab)
 	ft_join_all(str, sp, tab);
 }
 
-void	ft_convert_p(va_list ap, t_printf *tab)
+void	ft_con_p(va_list ap, t_printf *tab)
 {
 	char	*str;
 	char	*sp;

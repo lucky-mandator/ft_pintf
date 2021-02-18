@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 12:55:17 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 18:51:47 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/18 13:39:42 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ size_t	ft_check_sp(char c)
 
 size_t ft_check_pf(char c)
 {
-	return (ft_check_sp(c) || c == '+' || c == '-' || c == '.' || c  == '#' || c == ' ' 
+	return (ft_check_sp(c) || c == '+' || c == '*' || c == '-' || c == '.' || c  == '#' || c == ' ' 
 			|| (c >= '0' && c <= '9'));
 }
 
 size_t	ft_check_flags(char c)
 {
-	return (c == '+' || c == ' ' || c == '-' || c == '#' || c == '0');
+	return (c == '+' || c == ' ' || c == '-' || c == '#' || c == '0' );
 }

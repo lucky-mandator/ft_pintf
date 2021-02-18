@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 15:51:13 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 19:49:38 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/15 20:11:54 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_size_u(va_list ap, t_printf *tab)
 		tab->u = (uintmax_t)va_arg(ap, unsigned int);
 }
 
-void	ft_convert_int(va_list ap, t_printf *tab)
+void	ft_con_int(va_list ap, t_printf *tab)
 {
 	char	*str;
 	char	*sp;

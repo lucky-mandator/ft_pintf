@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 13:45:23 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 18:50:16 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/18 11:14:35 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_c_to_str(char c)
 {
 	char	*s;
 
-	s = (char*)calloc(2, sizeof(char));
+	s = (char*)ft_calloc(2, sizeof(char));
 	s[0] = c;
 	s[1] = '\0';
 	return (s);
@@ -78,7 +78,7 @@ char	*ft_print_sp(t_printf *tab)
 	i = 0;
 	if (tab->width < tab->len)
 		return (NULL);
-	if (!(str = calloc((tab->width - tab->len + 1), sizeof(char))))
+	if (!(str = ft_calloc((tab->width - tab->len + 1), sizeof(char))))
 		return (NULL);
 	if (tab->dot && tab->dot_len > tab->len)
 		tab->zero = 0;

@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:45:54 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/15 18:57:18 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/18 14:37:19 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,13 @@ void	ft_init_strct(t_printf *tab)
 	tab->dot_len = 0;
 	tab->u = 0;
 	tab->n = 0;
+	tab->dot_parsing = 0;
+	tab->convert = 0;
+	tab->len = 0;
+	tab->sp_len = 0;
+	tab->is_int = 0;
+	tab->h_count = 0;
+	tab->l_count = 0;
 }
 
 int ft_printf(const char *format, ...)
@@ -93,9 +100,4 @@ int ft_printf(const char *format, ...)
 	va_end(ap);
 	ft_dump_buff(&tab);
 	return (tab.ret);
-}
-
-int main(void)
-{
-	ft_printf("sai chaitanya%csai", 'D');
 }
