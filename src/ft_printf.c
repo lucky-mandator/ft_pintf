@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:45:54 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/18 14:37:19 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/20 17:48:27 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_print_normal(t_printf *tab, char *format)
 			ft_dump_buff(tab);
 		tab->i++;
 	}
-	tab->ret +=len;
+	tab->ret += len;
 	tab->i--;
 }
 
@@ -76,20 +76,19 @@ void	ft_init_strct(t_printf *tab)
 	tab->l_count = 0;
 }
 
-int ft_printf(const char *format, ...)
+int		ft_printf(const char *format, ...)
 {
 	t_printf	tab;
 	va_list		ap;
 
 	ft_init_strct(&tab);
 	va_start(ap, format);
-	while(format[tab.i])
+	while (format[tab.i])
 	{
-		
-		if(format[tab.i] == '%')
+		if (format[tab.i] == '%')
 		{
 			if (format[tab.i + 1] == '\0')
-				break;
+				break ;
 			if (ft_check_pf(format[tab.i + 1]))
 				ft_prase((char*)format, ap, &tab);
 		}

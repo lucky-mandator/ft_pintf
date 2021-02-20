@@ -6,13 +6,13 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 17:00:23 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/20 17:23:40 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/20 17:44:45 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_join_all(char *str, char *sp, t_printf *tab)
+void		ft_join_all(char *str, char *sp, t_printf *tab)
 {
 	(tab->is_int && tab->zero) ? ft_add_sign(tab) : 0;
 	if (tab->zero && tab->convert == 'p')
@@ -40,7 +40,7 @@ void	ft_join_all(char *str, char *sp, t_printf *tab)
 	free(sp);
 }
 
-char	*ft_num_precision(char *str, t_printf *tab)
+char		*ft_num_precision(char *str, t_printf *tab)
 {
 	char	*tmp;
 	int		i;
@@ -69,7 +69,7 @@ char	*ft_num_precision(char *str, t_printf *tab)
 	return (tmp);
 }
 
-size_t	ft_uintlen(uintmax_t n)
+size_t		ft_uintlen(uintmax_t n)
 {
 	size_t		len;
 

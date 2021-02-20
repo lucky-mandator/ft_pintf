@@ -6,13 +6,13 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 13:45:23 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/18 11:14:35 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/20 17:38:37 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_intlen(int x)
+int		ft_intlen(int x)
 {
 	int	i;
 
