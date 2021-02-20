@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 17:00:23 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/16 14:43:47 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/20 17:23:40 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,3 @@ intmax_t	ft_atoi_base(char *str, char *base)
 	}
 	return (negative ? -atoi : atoi);
 }
-

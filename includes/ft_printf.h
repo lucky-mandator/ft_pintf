@@ -6,7 +6,7 @@
 /*   By: saluru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 18:56:13 by saluru            #+#    #+#             */
-/*   Updated: 2021/02/18 13:46:40 by saluru           ###   ########.fr       */
+/*   Updated: 2021/02/20 17:21:02 by saluru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,8 @@ size_t	ft_check_pf(char c);
 size_t	ft_check_flags(char c);
 
 void	ft_prase(char *format, va_list ap, t_printf *tab);
+
 void	ft_save_flags(char *format, va_list ap, t_printf *tab);
-void	ft_save_action(char *format, t_printf *tab);
-void	ft_save_rest(char *format, va_list ap, t_printf *tab);
-void	ft_save_num(char *format, va_list ap, t_printf *tab);
-void	ft_check_star(va_list, t_printf *tab);
 
 char	*ft_print_sp(t_printf *tab);
 char	*ft_num_precision(char *str, t_printf *tab);
@@ -94,6 +91,7 @@ void	ft_reset_flags(t_printf *tab);
 void	ft_set_precision(t_printf *tab);
 char	*ft_strdup_l(char *s, t_printf *tab);
 int		ft_atoi_printf(char *str, int *i);
+
 char	*itoa_printf(intmax_t n);
 char	*ft_uitoa(uintmax_t n);
 size_t	ft_intlen_base(uintmax_t n, char *base);
@@ -104,11 +102,7 @@ void	ft_convert_uint(va_list ap, t_printf *tab);
 void	ft_size_int(va_list ap, t_printf *tab);
 
 
-
-/*
- * libft functions
- */
-char		*ft_itoa(int n);
-int			ft_atoi(const char *str);
+void	ft_check_flag(char *str, va_list ap, t_printf *tab);
+int		ft_parse2(char *str, va_list ap, t_printf *tab);
 
 #endif
